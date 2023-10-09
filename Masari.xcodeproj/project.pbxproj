@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */; };
+		FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68E2AD42CC300FB31F9 /* ContentView.swift */; };
+		FC28F6912AD42CC500FB31F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC28F6902AD42CC500FB31F9 /* Assets.xcassets */; };
+		FC28F6942AD42CC500FB31F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC28F6932AD42CC500FB31F9 /* Preview Assets.xcassets */; };
+		FC28F69E2AD42CC500FB31F9 /* MasariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F69D2AD42CC500FB31F9 /* MasariTests.swift */; };
+		FC28F6A82AD42CC500FB31F9 /* MasariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F6A72AD42CC500FB31F9 /* MasariUITests.swift */; };
+		FC28F6AA2AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F6A92AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC28F69A2AD42CC500FB31F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC28F6812AD42CC300FB31F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC28F6882AD42CC300FB31F9;
+			remoteInfo = Masari;
+		};
+		FC28F6A42AD42CC500FB31F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC28F6812AD42CC300FB31F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC28F6882AD42CC300FB31F9;
+			remoteInfo = Masari;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC28F6892AD42CC300FB31F9 /* Masari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariApp.swift; sourceTree = "<group>"; };
+		FC28F68E2AD42CC300FB31F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC28F6902AD42CC500FB31F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC28F6932AD42CC500FB31F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC28F6992AD42CC500FB31F9 /* MasariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC28F69D2AD42CC500FB31F9 /* MasariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariTests.swift; sourceTree = "<group>"; };
+		FC28F6A32AD42CC500FB31F9 /* MasariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC28F6A72AD42CC500FB31F9 /* MasariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariUITests.swift; sourceTree = "<group>"; };
+		FC28F6A92AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC28F6862AD42CC300FB31F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC28F6962AD42CC500FB31F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC28F6A02AD42CC500FB31F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC28F6802AD42CC300FB31F9 = {
+			isa = PBXGroup;
+			children = (
+				FC28F68B2AD42CC300FB31F9 /* Masari */,
+				FC28F69C2AD42CC500FB31F9 /* MasariTests */,
+				FC28F6A62AD42CC500FB31F9 /* MasariUITests */,
+				FC28F68A2AD42CC300FB31F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC28F68A2AD42CC300FB31F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC28F6892AD42CC300FB31F9 /* Masari.app */,
+				FC28F6992AD42CC500FB31F9 /* MasariTests.xctest */,
+				FC28F6A32AD42CC500FB31F9 /* MasariUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC28F68B2AD42CC300FB31F9 /* Masari */ = {
+			isa = PBXGroup;
+			children = (
+				FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */,
+				FC28F68E2AD42CC300FB31F9 /* ContentView.swift */,
+				FC28F6902AD42CC500FB31F9 /* Assets.xcassets */,
+				FC28F6922AD42CC500FB31F9 /* Preview Content */,
+			);
+			path = Masari;
+			sourceTree = "<group>";
+		};
+		FC28F6922AD42CC500FB31F9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC28F6932AD42CC500FB31F9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC28F69C2AD42CC500FB31F9 /* MasariTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC28F69D2AD42CC500FB31F9 /* MasariTests.swift */,
+			);
+			path = MasariTests;
+			sourceTree = "<group>";
+		};
+		FC28F6A62AD42CC500FB31F9 /* MasariUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC28F6A72AD42CC500FB31F9 /* MasariUITests.swift */,
+				FC28F6A92AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift */,
+			);
+			path = MasariUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC28F6882AD42CC300FB31F9 /* Masari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC28F6AD2AD42CC500FB31F9 /* Build configuration list for PBXNativeTarget "Masari" */;
+			buildPhases = (
+				FC28F6852AD42CC300FB31F9 /* Sources */,
+				FC28F6862AD42CC300FB31F9 /* Frameworks */,
+				FC28F6872AD42CC300FB31F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masari;
+			productName = Masari;
+			productReference = FC28F6892AD42CC300FB31F9 /* Masari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC28F6982AD42CC500FB31F9 /* MasariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC28F6B02AD42CC500FB31F9 /* Build configuration list for PBXNativeTarget "MasariTests" */;
+			buildPhases = (
+				FC28F6952AD42CC500FB31F9 /* Sources */,
+				FC28F6962AD42CC500FB31F9 /* Frameworks */,
+				FC28F6972AD42CC500FB31F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC28F69B2AD42CC500FB31F9 /* PBXTargetDependency */,
+			);
+			name = MasariTests;
+			productName = MasariTests;
+			productReference = FC28F6992AD42CC500FB31F9 /* MasariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC28F6A22AD42CC500FB31F9 /* MasariUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC28F6B32AD42CC500FB31F9 /* Build configuration list for PBXNativeTarget "MasariUITests" */;
+			buildPhases = (
+				FC28F69F2AD42CC500FB31F9 /* Sources */,
+				FC28F6A02AD42CC500FB31F9 /* Frameworks */,
+				FC28F6A12AD42CC500FB31F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC28F6A52AD42CC500FB31F9 /* PBXTargetDependency */,
+			);
+			name = MasariUITests;
+			productName = MasariUITests;
+			productReference = FC28F6A32AD42CC500FB31F9 /* MasariUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC28F6812AD42CC300FB31F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FC28F6882AD42CC300FB31F9 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FC28F6982AD42CC500FB31F9 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FC28F6882AD42CC300FB31F9;
+					};
+					FC28F6A22AD42CC500FB31F9 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FC28F6882AD42CC300FB31F9;
+					};
+				};
+			};
+			buildConfigurationList = FC28F6842AD42CC300FB31F9 /* Build configuration list for PBXProject "Masari" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC28F6802AD42CC300FB31F9;
+			productRefGroup = FC28F68A2AD42CC300FB31F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC28F6882AD42CC300FB31F9 /* Masari */,
+				FC28F6982AD42CC500FB31F9 /* MasariTests */,
+				FC28F6A22AD42CC500FB31F9 /* MasariUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC28F6872AD42CC300FB31F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC28F6942AD42CC500FB31F9 /* Preview Assets.xcassets in Resources */,
+				FC28F6912AD42CC500FB31F9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC28F6972AD42CC500FB31F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC28F6A12AD42CC500FB31F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC28F6852AD42CC300FB31F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */,
+				FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC28F6952AD42CC500FB31F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC28F69E2AD42CC500FB31F9 /* MasariTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC28F69F2AD42CC500FB31F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC28F6A82AD42CC500FB31F9 /* MasariUITests.swift in Sources */,
+				FC28F6AA2AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC28F69B2AD42CC500FB31F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC28F6882AD42CC300FB31F9 /* Masari */;
+			targetProxy = FC28F69A2AD42CC500FB31F9 /* PBXContainerItemProxy */;
+		};
+		FC28F6A52AD42CC500FB31F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC28F6882AD42CC300FB31F9 /* Masari */;
+			targetProxy = FC28F6A42AD42CC500FB31F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC28F6AB2AD42CC500FB31F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC28F6AC2AD42CC500FB31F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC28F6AE2AD42CC500FB31F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Masari/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zinab.Masari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC28F6AF2AD42CC500FB31F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Masari/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zinab.Masari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC28F6B12AD42CC500FB31F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zinab.MasariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masari.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Masari";
+			};
+			name = Debug;
+		};
+		FC28F6B22AD42CC500FB31F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zinab.MasariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masari.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Masari";
+			};
+			name = Release;
+		};
+		FC28F6B42AD42CC500FB31F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zinab.MasariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Masari;
+			};
+			name = Debug;
+		};
+		FC28F6B52AD42CC500FB31F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Zinab.MasariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Masari;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC28F6842AD42CC300FB31F9 /* Build configuration list for PBXProject "Masari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC28F6AB2AD42CC500FB31F9 /* Debug */,
+				FC28F6AC2AD42CC500FB31F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC28F6AD2AD42CC500FB31F9 /* Build configuration list for PBXNativeTarget "Masari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC28F6AE2AD42CC500FB31F9 /* Debug */,
+				FC28F6AF2AD42CC500FB31F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC28F6B02AD42CC500FB31F9 /* Build configuration list for PBXNativeTarget "MasariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC28F6B12AD42CC500FB31F9 /* Debug */,
+				FC28F6B22AD42CC500FB31F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC28F6B32AD42CC500FB31F9 /* Build configuration list for PBXNativeTarget "MasariUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC28F6B42AD42CC500FB31F9 /* Debug */,
+				FC28F6B52AD42CC500FB31F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC28F6812AD42CC300FB31F9 /* Project object */;
+}
