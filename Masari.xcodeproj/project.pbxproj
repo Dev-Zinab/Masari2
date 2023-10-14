@@ -14,6 +14,8 @@
 		FC28F69E2AD42CC500FB31F9 /* MasariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F69D2AD42CC500FB31F9 /* MasariTests.swift */; };
 		FC28F6A82AD42CC500FB31F9 /* MasariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F6A72AD42CC500FB31F9 /* MasariUITests.swift */; };
 		FC28F6AA2AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F6A92AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift */; };
+		FC28F6BB2AD8625100FB31F9 /* QuizClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F6BA2AD8625100FB31F9 /* QuizClass.swift */; };
+		FC28F6BD2AD8642F00FB31F9 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F6BC2AD8642F00FB31F9 /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		FC28F6A32AD42CC500FB31F9 /* MasariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC28F6A72AD42CC500FB31F9 /* MasariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariUITests.swift; sourceTree = "<group>"; };
 		FC28F6A92AD42CC500FB31F9 /* MasariUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FC28F6BA2AD8625100FB31F9 /* QuizClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizClass.swift; sourceTree = "<group>"; };
+		FC28F6BC2AD8642F00FB31F9 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */,
+				FC28F6BA2AD8625100FB31F9 /* QuizClass.swift */,
+				FC28F6BC2AD8642F00FB31F9 /* Quiz.swift */,
 				FC28F68E2AD42CC300FB31F9 /* ContentView.swift */,
 				FC28F6902AD42CC500FB31F9 /* Assets.xcassets */,
 				FC28F6922AD42CC500FB31F9 /* Preview Content */,
@@ -208,11 +214,12 @@
 			};
 			buildConfigurationList = FC28F6842AD42CC300FB31F9 /* Build configuration list for PBXProject "Masari" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ar;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = FC28F6802AD42CC300FB31F9;
 			productRefGroup = FC28F68A2AD42CC300FB31F9 /* Products */;
@@ -259,6 +266,8 @@
 			files = (
 				FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */,
 				FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */,
+				FC28F6BD2AD8642F00FB31F9 /* Quiz.swift in Sources */,
+				FC28F6BB2AD8625100FB31F9 /* QuizClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
