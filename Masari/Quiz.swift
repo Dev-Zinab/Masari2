@@ -21,7 +21,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 if !quiz.isQuizComplete {
-                    QuestionView(question: quiz.currentQuestion, submitAnswer: submitAnswer)
+                    QuestionView(question: quiz.currentQuestion, submitAnswer: submitAnswer, quiz: quiz)
                 } else {
                     Text("Quiz Over! Your Score: \(quiz.calculateScore())")
                 }
@@ -39,6 +39,7 @@ struct ContentView: View {
 struct QuestionView: View {
     let question: Question
     let submitAnswer: (Bool) -> Void
+    @ObservedObject var quiz: Quiz // Make sure to pass the quiz instance
 
     var body: some View {
         VStack {
@@ -80,11 +81,12 @@ struct QuestionView: View {
             
             
             
-            Text("\(Quiz.currentQuestion) / \(Quiz.questions.count)")
-            ProgressView(value: Int (Quiz.currentQuestionIndex)/Int (Quiz.questions.count))
-                .scaleEffect(CGSize(width: 1, height: 4))
-                .progressViewStyle(LinearProgressViewStyle())
+            Text("\(quiz.currentQuestionIndex + 1) / \(quiz.questions.count)") // Add +1 to show 1-based index
+
+            ProgressView(value: Double(quiz.currentQuestionIndex) / Double(quiz.questions.count))
+                .progressViewStyle(LinearProgressViewStyle(tint: Color(UIColor(red: 0.96, green: 0.64, blue: 0.38, alpha: 1.00))))
                 .padding(.horizontal)
+
         }
 
     }
