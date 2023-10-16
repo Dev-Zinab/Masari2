@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13FD1AFB2ADD7C690019449F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FD1AFA2ADD7C690019449F /* SplashScreen.swift */; };
 		13FD1AFD2ADD7CB20019449F /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FD1AFC2ADD7CB20019449F /* Onboarding.swift */; };
+		7CFC3ED12ADD83B200AD7664 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC3ED02ADD83B200AD7664 /* HomeScreen.swift */; };
 		FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */; };
 		FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68E2AD42CC300FB31F9 /* ContentView.swift */; };
 		FC28F6912AD42CC500FB31F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC28F6902AD42CC500FB31F9 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		13FD1AFA2ADD7C690019449F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		13FD1AFC2ADD7CB20019449F /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		7CFC3ED02ADD83B200AD7664 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		FC28F6892AD42CC300FB31F9 /* Masari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariApp.swift; sourceTree = "<group>"; };
 		FC28F68E2AD42CC300FB31F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				13FD1AFA2ADD7C690019449F /* SplashScreen.swift */,
 				13FD1AFC2ADD7CB20019449F /* Onboarding.swift */,
 				FC28F68E2AD42CC300FB31F9 /* ContentView.swift */,
+				7CFC3ED02ADD83B200AD7664 /* HomeScreen.swift */,
 				FC28F6902AD42CC500FB31F9 /* Assets.xcassets */,
 				FC28F6922AD42CC500FB31F9 /* Preview Content */,
 			);
@@ -272,6 +275,7 @@
 			files = (
 				13FD1AFD2ADD7CB20019449F /* Onboarding.swift in Sources */,
 				13FD1AFB2ADD7C690019449F /* SplashScreen.swift in Sources */,
+				7CFC3ED12ADD83B200AD7664 /* HomeScreen.swift in Sources */,
 				FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */,
 				FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */,
 				FC28F6BD2AD8642F00FB31F9 /* Quiz.swift in Sources */,
