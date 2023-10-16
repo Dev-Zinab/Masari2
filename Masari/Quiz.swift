@@ -105,6 +105,13 @@ struct ContentView: View {
        func submitAnswer(isAgree: Bool) {
            quiz1.submitAnswer(isAgree: isAgree)
            quiz1.moveToNextQuestion()
+           quiz2.submitAnswer(isAgree: isAgree)
+           quiz2.moveToNextQuestion()
+           quiz3.submitAnswer(isAgree: isAgree)
+           quiz3.moveToNextQuestion()
+           quiz4.submitAnswer(isAgree: isAgree)
+           quiz4.moveToNextQuestion()
+
        }
        
    }
