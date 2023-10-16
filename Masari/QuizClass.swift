@@ -20,18 +20,51 @@ class Quiz: ObservableObject {
     func submitAnswer(isAgree: Bool) {              //مافهمت
         userAnswers[currentQuestionIndex] = isAgree
     }
+    var score = 0
 
     func calculateScore() -> Int {
-        var score = 0
 
         for (index, question) in questions.enumerated() {//قيم محددة مايخرج عنها بس هنا وين القيم مدخلتها 
             if let userAnswer = userAnswers[index], userAnswer == question.correctAnswer {
                 score += 1
             }
         }
+            
 
         return score
     }
+    
+    
+   
+    
+   
+
+    func result() -> Int
+    
+    {
+        if (score > 6)
+        {
+            print ("A")
+        }
+        if (score < 6) {
+            print ("b")
+        }
+        return result()
+        }
+    
+    func result13() -> Int
+    
+    {
+        if (score > 7)
+        {
+            print ("A")
+        }
+        if (score < 7) {
+            print ("b")
+        }
+        return result()
+        }
+    
     var currentQuestionNumber: Int {
             // Calculate the current question number based on the current index
             return currentQuestionIndex + 1
