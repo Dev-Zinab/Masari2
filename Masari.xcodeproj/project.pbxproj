@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13FD1AFB2ADD7C690019449F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FD1AFA2ADD7C690019449F /* SplashScreen.swift */; };
+		13FD1AFD2ADD7CB20019449F /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FD1AFC2ADD7CB20019449F /* Onboarding.swift */; };
 		FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */; };
 		FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68E2AD42CC300FB31F9 /* ContentView.swift */; };
 		FC28F6912AD42CC500FB31F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC28F6902AD42CC500FB31F9 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13FD1AFA2ADD7C690019449F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		13FD1AFC2ADD7CB20019449F /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		FC28F6892AD42CC300FB31F9 /* Masari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariApp.swift; sourceTree = "<group>"; };
 		FC28F68E2AD42CC300FB31F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */,
 				FC28F6BA2AD8625100FB31F9 /* QuizClass.swift */,
 				FC28F6BC2AD8642F00FB31F9 /* Quiz.swift */,
+				13FD1AFA2ADD7C690019449F /* SplashScreen.swift */,
+				13FD1AFC2ADD7CB20019449F /* Onboarding.swift */,
 				FC28F68E2AD42CC300FB31F9 /* ContentView.swift */,
 				FC28F6902AD42CC500FB31F9 /* Assets.xcassets */,
 				FC28F6922AD42CC500FB31F9 /* Preview Content */,
@@ -264,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13FD1AFD2ADD7CB20019449F /* Onboarding.swift in Sources */,
+				13FD1AFB2ADD7C690019449F /* SplashScreen.swift in Sources */,
 				FC28F68F2AD42CC300FB31F9 /* ContentView.swift in Sources */,
 				FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */,
 				FC28F6BD2AD8642F00FB31F9 /* Quiz.swift in Sources */,

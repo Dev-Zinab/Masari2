@@ -11,7 +11,11 @@ import SwiftUI
 struct MasariApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if UserDefaults.standard.bool(forKey: "OnboardingShown") {
+                          HomeScreen()
+                      } else {
+                          Onboarding()
+                      }
         }
     }
 }
