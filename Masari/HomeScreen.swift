@@ -9,17 +9,20 @@ import SwiftUI
 
 struct HomeScreen: View {
     @State private var selectedGender: String = ""
+    @State private var isNavigationActive = false
+
     
     var body: some View {
-        VStack {
-            Text("مرحبًا")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(Color(red: 0.12941176470588237, green: 0.17647058823529413, blue: 0.3254901960784314))
-                .padding(.leading, -155.0)
+        NavigationView {
+            VStack {
+                Text("مرحبًا")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .foregroundColor(Color(red: 0.12941176470588237, green: 0.17647058823529413, blue: 0.3254901960784314))
+                    .padding(.leading, -155.0)
             
-            Text("اختار شخصيتك:")
-                .padding()
+                Text("اختار شخصيتك:")
+                    .padding()
                 .foregroundColor(Color(red: 0.12941176470588237, green: 0.17647058823529413, blue: 0.3254901960784314))
                 .multilineTextAlignment(.trailing)
                 .padding(.bottom, 50.0)
@@ -31,7 +34,7 @@ struct HomeScreen: View {
                     // Save "female" when the button is tapped
                     selectedGender = "female"
                     UserDefaults.standard.set(selectedGender, forKey: "userGender")
-                    
+                    isNavigationActive = true
                     print("Select Female")
                     
                 }, label: {
@@ -41,29 +44,28 @@ struct HomeScreen: View {
                         .foregroundColor(.accentColor)
                         .padding(.leading, -4.0)
                 })
-//                NavigationLink(destination: NextPage()) {
-//                                    Text("Next Page")
-//                                }
-                //                       .background(selectedGender == "female" ? Color.blue : Color.gray) // Change the background color based on selection
-                //                    .cornerRadius(8), // Add corner radius for a rounded look
-                
+               
                 
                 Button(action: {
-                    // Save "male" when the button is tapped
-                    selectedGender = "male"
-                    UserDefaults.standard.set(selectedGender, forKey: "userGender")
-                    print("Select male")
-                    
-                }, label: {
-                    Image("M")
-                        .resizable()
-                        .padding(0.0)
-                        .frame(width: 167, height: 161 )
-                        .foregroundColor(.accentColor)
-                    
-                })
+                               // Save "male" when the button is tapped
+                               selectedGender = "male"
+                               UserDefaults.standard.set(selectedGender, forKey: "userGender")
+                               print("Select male")
+                               // Activate the navigation link
+                               isNavigationActive = true
+                           }) {
+                               Image("M")
+                                   .resizable()
+                                   .frame(width: 167, height: 161)
+                                   .foregroundColor(.accentColor)
+                           }
+
+                           NavigationLink(destination: QuizView(), isActive: $isNavigationActive) {
+                               EmptyView()
+                           }
                 
                 
+
                 
                 
                 //                Button("متابعة") {
@@ -78,6 +80,7 @@ struct HomeScreen: View {
                 //
             }
             .padding()
+            }
         }
     }
 }

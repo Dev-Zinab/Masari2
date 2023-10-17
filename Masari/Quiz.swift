@@ -1,18 +1,18 @@
 import SwiftUI
 
 
-struct ContentView: View {
-    var arrayOfQuizzes: [[Quiz]] = []
-
-        init() {
-            arrayOfQuizzes =
-            [
-                [quiz1],
-                [quiz2],
-                [quiz3],
-                [quiz4]
-                            ]
-        }
+struct QuizView: View {
+    var arrayOfQuizzes: [Quiz] = []
+    @State private var currentQuizIndex = 0
+    init() {
+        arrayOfQuizzes =
+        [quiz1, quiz2, quiz3, quiz4]
+    }
+    
+    @State private var activeQuizIndex = 0
+    
+    
+    
     
     @StateObject private var quiz1 = Quiz(questions: [
         
@@ -73,52 +73,58 @@ struct ContentView: View {
         Question(text: "ما تلقى صعوبة في انك تحط جدول زمني وتلتزم فيه؟", correctAnswer: false),
         Question(text:"تميل للتأجيل الى اخر الوقت؟", correctAnswer: true),
     ])
-//    @StateObject private var quiz5 = Quiz(questions: [
-//        
-//        Question(text: "سهل عليك الاسترخاء والتركيز حتى؟", correctAnswer: true),
-//        Question(text: "تحس أنك أفضل من الاشخاص الآخرين؟", correctAnswer: false),
-//        Question(text: " مزاجك يتغير بسرعه ؟", correctAnswer: false),
-//        Question(text: "دايم تحس بالغيرة من الاشخاص الآخرين؟", correctAnswer: false),
-//        Question(text: "لما ما يرد عليك شخص بالايميل، تحس بالقلق انك قلت شيء غلط؟", correctAnswer: false),
-//        Question(text: "  نادر ما تحس بعدم الأمان؟", correctAnswer: true),
-//        Question(text: "كثير ما تخلي اشيائك الخاصة في غير مكانها؟", correctAnswer: false),
-//        Question(text: "تشوف نفسك مستقر جدا في الجانب العاطفي؟", correctAnswer: true),
-//        Question(text: "تقلق كثير بتفكير االآخرين؟", correctAnswer: false),
-//        
-//        Question(text: "تحس انك قلق جدا بالمواقف الصعبه؟", correctAnswer: false),
-//        Question(text: "غالبا تحس انك مضطر لتبرير افعالك للآخرين؟", correctAnswer: false),
-//        //  Question(text:"نادر ما يقدرون يضايقونك الاشخاص؟", correctAnswer: true),
-//    ])
+    //    @StateObject private var quiz5 = Quiz(questions: [
+    //        
+    //        Question(text: "سهل عليك الاسترخاء والتركيز حتى؟", correctAnswer: true),
+    //        Question(text: "تحس أنك أفضل من الاشخاص الآخرين؟", correctAnswer: false),
+    //        Question(text: " مزاجك يتغير بسرعه ؟", correctAnswer: false),
+    //        Question(text: "دايم تحس بالغيرة من الاشخاص الآخرين؟", correctAnswer: false),
+    //        Question(text: "لما ما يرد عليك شخص بالايميل، تحس بالقلق انك قلت شيء غلط؟", correctAnswer: false),
+    //        Question(text: "  نادر ما تحس بعدم الأمان؟", correctAnswer: true),
+    //        Question(text: "كثير ما تخلي اشيائك الخاصة في غير مكانها؟", correctAnswer: false),
+    //        Question(text: "تشوف نفسك مستقر جدا في الجانب العاطفي؟", correctAnswer: true),
+    //        Question(text: "تقلق كثير بتفكير االآخرين؟", correctAnswer: false),
+    //        
+    //        Question(text: "تحس انك قلق جدا بالمواقف الصعبه؟", correctAnswer: false),
+    //        Question(text: "غالبا تحس انك مضطر لتبرير افعالك للآخرين؟", correctAnswer: false),
+    //        //  Question(text:"نادر ما يقدرون يضايقونك الاشخاص؟", correctAnswer: true),
+    //    ])
     
     var body: some View {
-           NavigationView {
-               VStack {
-                   if !arrayOfQuizzes.isQuizComplete {
-                       QuestionView(question: arrayOfQuizzes.currentQuestion, submitAnswer: submitAnswer, arrayOfQuizzes: arrayOfQuizzes)
-                   } else {
-                       Text("Quiz Over! Your Score: \(quiz1.calculateScore())")
-                   }
-               }
-               .navigationTitle("الأسئلة")
-           }
-       }
-       func submitAnswer(isAgree: Bool) {
-           quiz1.submitAnswer(isAgree: isAgree)
-           quiz1.moveToNextQuestion()
-           quiz2.submitAnswer(isAgree: isAgree)
-           quiz2.moveToNextQuestion()
-           quiz3.submitAnswer(isAgree: isAgree)
-           quiz3.moveToNextQuestion()
-           quiz4.submitAnswer(isAgree: isAgree)
-           quiz4.moveToNextQuestion()
-
-       }
-       
-   }
-
+        NavigationView {
+            VStack {
+                if activeQuizIndex < arrayOfQuizzes.count {
+                    if arrayOfQuizzes[activeQuizIndex].currentQuestionIndex < arrayOfQuizzes[activeQuizIndex].questions.count {
+                        QuestionView(
+                            submitAnswer: submitAnswer, question: arrayOfQuizzes[activeQuizIndex].currentQuestion,
+                            quiz: arrayOfQuizzes[activeQuizIndex]
+                        )
+                    } else {
+                        Text("Quiz \(activeQuizIndex + 1) is complete.")
+                    }
+                } else {
+                    Text("All quizzes are complete.")
+                }
+            }
+            .navigationTitle("الأسئلة")
+        }
+    }
+    
+    func submitAnswer(isAgree: Bool) {
+        // Submit the answer and move to the next question
+        arrayOfQuizzes[activeQuizIndex].submitAnswer(isAgree: isAgree)
+        arrayOfQuizzes[activeQuizIndex].moveToNextQuestion()
+        
+        // Check if the current quiz is complete
+        if arrayOfQuizzes[activeQuizIndex].isQuizComplete {
+            activeQuizIndex += 1  // Move to the next quiz
+        }
+    }
+    
+}
    struct QuestionView: View {
-       let question: Question
        let submitAnswer: (Bool) -> Void
+       let question : Question
        @ObservedObject var quiz: Quiz // Make sure to pass the quiz instance
        
         
@@ -127,7 +133,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 
-                Text(question.text)
+                Text(quiz.currentQuestion.text)
                     .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
                     .font(.headline)
                     .padding()
@@ -170,11 +176,11 @@ struct ContentView: View {
             
         }
     }
-    
+
     
     
     
     #Preview {
-        ContentView()
+        QuizView()
     }
-}
+
