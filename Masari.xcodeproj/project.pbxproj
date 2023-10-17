@@ -9,14 +9,7 @@
 /* Begin PBXBuildFile section */
 		13FD1AFB2ADD7C690019449F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FD1AFA2ADD7C690019449F /* SplashScreen.swift */; };
 		13FD1AFD2ADD7CB20019449F /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FD1AFC2ADD7CB20019449F /* Onboarding.swift */; };
-		3F455C012ADEBEC70059F749 /* AnalystFemale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C002ADEBEC70059F749 /* AnalystFemale.swift */; };
-		3F455C032ADEBF120059F749 /* AnalystMale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C022ADEBF120059F749 /* AnalystMale.swift */; };
-		3F455C052ADEBF6F0059F749 /* ExplorerFemale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C042ADEBF6F0059F749 /* ExplorerFemale.swift */; };
-		3F455C072ADEBFA00059F749 /* ExplorerMale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C062ADEBFA00059F749 /* ExplorerMale.swift */; };
-		3F455C092ADEBFEC0059F749 /* DiplomatFemale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C082ADEBFEC0059F749 /* DiplomatFemale.swift */; };
-		3F455C0B2ADEC01E0059F749 /* DiplomatMale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C0A2ADEC01E0059F749 /* DiplomatMale.swift */; };
-		3F455C0D2ADEC06D0059F749 /* SentinelFemale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C0C2ADEC06D0059F749 /* SentinelFemale.swift */; };
-		3F455C0F2ADEC09E0059F749 /* SentinelMale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C0E2ADEC09E0059F749 /* SentinelMale.swift */; };
+		3F455C112ADECE840059F749 /* PersonalityResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F455C102ADECE840059F749 /* PersonalityResults.swift */; };
 		7CFC3ED12ADD83B200AD7664 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC3ED02ADD83B200AD7664 /* HomeScreen.swift */; };
 		FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */; };
 		FC28F6912AD42CC500FB31F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC28F6902AD42CC500FB31F9 /* Assets.xcassets */; };
@@ -48,14 +41,7 @@
 /* Begin PBXFileReference section */
 		13FD1AFA2ADD7C690019449F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		13FD1AFC2ADD7CB20019449F /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		3F455C002ADEBEC70059F749 /* AnalystFemale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystFemale.swift; sourceTree = "<group>"; };
-		3F455C022ADEBF120059F749 /* AnalystMale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystMale.swift; sourceTree = "<group>"; };
-		3F455C042ADEBF6F0059F749 /* ExplorerFemale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerFemale.swift; sourceTree = "<group>"; };
-		3F455C062ADEBFA00059F749 /* ExplorerMale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerMale.swift; sourceTree = "<group>"; };
-		3F455C082ADEBFEC0059F749 /* DiplomatFemale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomatFemale.swift; sourceTree = "<group>"; };
-		3F455C0A2ADEC01E0059F749 /* DiplomatMale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomatMale.swift; sourceTree = "<group>"; };
-		3F455C0C2ADEC06D0059F749 /* SentinelFemale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentinelFemale.swift; sourceTree = "<group>"; };
-		3F455C0E2ADEC09E0059F749 /* SentinelMale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentinelMale.swift; sourceTree = "<group>"; };
+		3F455C102ADECE840059F749 /* PersonalityResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityResults.swift; sourceTree = "<group>"; };
 		7CFC3ED02ADD83B200AD7664 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		FC28F6892AD42CC300FB31F9 /* Masari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC28F68C2AD42CC300FB31F9 /* MasariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasariApp.swift; sourceTree = "<group>"; };
@@ -124,14 +110,7 @@
 				13FD1AFA2ADD7C690019449F /* SplashScreen.swift */,
 				13FD1AFC2ADD7CB20019449F /* Onboarding.swift */,
 				7CFC3ED02ADD83B200AD7664 /* HomeScreen.swift */,
-				3F455C002ADEBEC70059F749 /* AnalystFemale.swift */,
-				3F455C022ADEBF120059F749 /* AnalystMale.swift */,
-				3F455C082ADEBFEC0059F749 /* DiplomatFemale.swift */,
-				3F455C0A2ADEC01E0059F749 /* DiplomatMale.swift */,
-				3F455C0C2ADEC06D0059F749 /* SentinelFemale.swift */,
-				3F455C0E2ADEC09E0059F749 /* SentinelMale.swift */,
-				3F455C042ADEBF6F0059F749 /* ExplorerFemale.swift */,
-				3F455C062ADEBFA00059F749 /* ExplorerMale.swift */,
+				3F455C102ADECE840059F749 /* PersonalityResults.swift */,
 				FC28F6902AD42CC500FB31F9 /* Assets.xcassets */,
 				FC28F6922AD42CC500FB31F9 /* Preview Content */,
 			);
@@ -296,18 +275,11 @@
 			files = (
 				13FD1AFD2ADD7CB20019449F /* Onboarding.swift in Sources */,
 				13FD1AFB2ADD7C690019449F /* SplashScreen.swift in Sources */,
-				3F455C0B2ADEC01E0059F749 /* DiplomatMale.swift in Sources */,
 				7CFC3ED12ADD83B200AD7664 /* HomeScreen.swift in Sources */,
-				3F455C072ADEBFA00059F749 /* ExplorerMale.swift in Sources */,
-				3F455C092ADEBFEC0059F749 /* DiplomatFemale.swift in Sources */,
-				3F455C0F2ADEC09E0059F749 /* SentinelMale.swift in Sources */,
 				FC28F68D2AD42CC300FB31F9 /* MasariApp.swift in Sources */,
 				FC28F6BD2AD8642F00FB31F9 /* Quiz.swift in Sources */,
 				FC28F6BB2AD8625100FB31F9 /* QuizClass.swift in Sources */,
-				3F455C012ADEBEC70059F749 /* AnalystFemale.swift in Sources */,
-				3F455C0D2ADEC06D0059F749 /* SentinelFemale.swift in Sources */,
-				3F455C052ADEBF6F0059F749 /* ExplorerFemale.swift in Sources */,
-				3F455C032ADEBF120059F749 /* AnalystMale.swift in Sources */,
+				3F455C112ADECE840059F749 /* PersonalityResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
