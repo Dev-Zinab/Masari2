@@ -76,9 +76,17 @@ class Quiz: ObservableObject {
             currentQuestion = questions[currentQuestionIndex]
         }
     }
+    
+    
 }
 
 struct Question {
     let text: String
     let correctAnswer: Bool // "Agree" (true) or "Disagree" (false)
-} 
+    
+    func isCorrect(userAnswer: Bool) -> Bool {
+        return userAnswer == correctAnswer
+    }
+    
+}
+
