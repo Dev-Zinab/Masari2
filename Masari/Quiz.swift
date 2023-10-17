@@ -11,7 +11,8 @@ struct QuizView: View {
     
     @State private var activeQuizIndex = 0
     
-    
+    let userDefaultsKey = "QuizResults"
+
     
     
     @StateObject private var quiz1 = Quiz(questions: [
@@ -102,8 +103,15 @@ struct QuizView: View {
                     } else {
                         Text("Quiz \(activeQuizIndex + 1) is complete.")
                     }
-                } else {
+                }
+                if activeQuizIndex >= arrayOfQuizzes.count {
                     Text("All quizzes are complete.")
+                    
+                    // Calculate and display scores
+                    let quizScores = calculateScores()
+                    ForEach(0..<quizScores.count, id: \.self) { index in
+                        Text("Quiz \(index + 1) Score: \(quizScores[index])")
+                    }
                 }
             }
             .navigationTitle("الأسئلة")
@@ -117,11 +125,72 @@ struct QuizView: View {
         
         // Check if the current quiz is complete
         if arrayOfQuizzes[activeQuizIndex].isQuizComplete {
+            // Calculate the score for the current quiz
+            let quiz = arrayOfQuizzes[activeQuizIndex]
+            let score = calculateQuizScore(quiz: quiz)
+            
+            // Save the result in UserDefaults
+            let quizResult = QuizResult(quizTitle: "Quiz \(activeQuizIndex + 1)", score: score)
+            saveQuizResult(quizResult)
+            
             activeQuizIndex += 1  // Move to the next quiz
         }
     }
     
+    func calculateQuizScore(quiz: Quiz) -> Int {
+        var score = 0
+        
+        for question in quiz.questions {
+            if question.isCorrect(userAnswer: true) {
+                score += 1
+            }
+        }
+        
+        return score
+    }
+    
+    func calculateScores() -> [Int] {
+        var scores: [Int] = []
+        for quiz in arrayOfQuizzes {
+            let score = quiz.questions.enumerated().reduce(0) { result, item in
+                let (index, question) = item
+                return result + (question.isCorrect(userAnswer: quiz.userAnswers[index] ?? false) ? 1 : 0)
+            }
+            scores.append(score)
+        }
+        return scores
+    }
+    
+
+    func saveQuizResult(_ result: QuizResult) {
+        // Retrieve existing quiz results from UserDefaults
+        if let data = UserDefaults.standard.data(forKey: userDefaultsKey) {
+            do {
+                var quizResults = try JSONDecoder().decode([QuizResult].self, from: data)
+                quizResults.append(result)
+                let newData = try JSONEncoder().encode(quizResults)
+                UserDefaults.standard.set(newData, forKey: userDefaultsKey)
+            } catch {
+                print("Error decoding or encoding quiz results: \(error)")
+            }
+        } else {
+            // No existing results, create a new array and save
+            let quizResults = [result]
+            if let newData = try? JSONEncoder().encode(quizResults) {
+                UserDefaults.standard.set(newData, forKey: userDefaultsKey)
+            }
+        }
+    }
+    
+    
 }
+    
+struct QuizResult: Codable {
+    var quizTitle: String
+    var score: Int
+}
+
+
    struct QuestionView: View {
        let submitAnswer: (Bool) -> Void
        let question : Question
