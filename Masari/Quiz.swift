@@ -103,8 +103,15 @@ struct QuizView: View {
                     } else {
                         Text("Quiz \(activeQuizIndex + 1) is complete.")
                     }
-                } else {
+                }
+                if activeQuizIndex >= arrayOfQuizzes.count {
                     Text("All quizzes are complete.")
+                    
+                    // Calculate and display scores
+                    let quizScores = calculateScores()
+                    ForEach(0..<quizScores.count, id: \.self) { index in
+                        Text("Quiz \(index + 1) Score: \(quizScores[index])")
+                    }
                 }
             }
             .navigationTitle("الأسئلة")
@@ -141,6 +148,19 @@ struct QuizView: View {
         
         return score
     }
+    
+    func calculateScores() -> [Int] {
+        var scores: [Int] = []
+        for quiz in arrayOfQuizzes {
+            let score = quiz.questions.enumerated().reduce(0) { result, item in
+                let (index, question) = item
+                return result + (question.isCorrect(userAnswer: quiz.userAnswers[index] ?? false) ? 1 : 0)
+            }
+            scores.append(score)
+        }
+        return scores
+    }
+    
 
     func saveQuizResult(_ result: QuizResult) {
         // Retrieve existing quiz results from UserDefaults
