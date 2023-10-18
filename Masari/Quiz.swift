@@ -2,6 +2,7 @@ import SwiftUI
 
 
 struct QuizView: View {
+
     var arrayOfQuizzes: [Quiz] = []
     @State private var currentQuizIndex = 0
     init() {
@@ -249,7 +250,12 @@ struct QuizResult: Codable {
     
     
     
-    #Preview {
+//    #Preview {
+//        QuizView
+//    }
+struct Quiz_Previews: PreviewProvider {
+    static var previews: some View {
         QuizView()
     }
+}
 

@@ -263,6 +263,11 @@ struct PersonalityResults: View {
     }
 }
 
-#Preview {
-    PersonalityResults()
+//#Preview {
+//    PersonalityResults()
+//}
+struct PersonalityResults_Previews: PreviewProvider {
+    static var previews: some View {
+        PersonalityResults()
+    }
 }
