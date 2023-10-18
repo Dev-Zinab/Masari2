@@ -60,6 +60,7 @@ struct HomeScreen: View {
                                    .foregroundColor(.accentColor)
                            }
 
+                
                            NavigationLink(destination: QuizView(), isActive: $isNavigationActive) {
                                EmptyView()
                            }

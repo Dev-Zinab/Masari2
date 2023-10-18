@@ -1,20 +1,24 @@
+
+
 import SwiftUI
 
 
 struct QuizView: View {
-    var arrayOfQuizzes: [Quiz] = []
+    //    var arrayOfQuizzes: [Quiz] = []
     @State private var currentQuizIndex = 0
-    init() {
-        arrayOfQuizzes =
+    
+    var arrayOfQuizzes: [Quiz] {
         [quiz1, quiz2, quiz3, quiz4]
     }
     
     @State private var activeQuizIndex = 0
     
     let userDefaultsKey = "QuizResults"
+    
+    @State private var shouldShowAnalyst = false
+    @State private var quizzesFinished = false  
 
-    
-    
+
     @StateObject private var quiz1 = Quiz(questions: [
         
         Question(text: "تحس بصعوبة لما تحاول تعرف بنفسك للناس؟", correctAnswer: true),
@@ -36,7 +40,6 @@ struct QuizView: View {
         Question(text: " تشوف نفسك مبدع عمليًا اكثر من الإبداع الابتكاري؟", correctAnswer: true),
         Question(text: "غالبا تغرق بالتفكير لما تمشي بالمناظر الطبيعية؟", correctAnswer: true),
         Question(text: "نادر ما تأخذك الأفكار و الأوهام؟", correctAnswer: false),
-        Question(text: "  غالبا تغرق بالتفكير لما تمشي بالمناظر الطبيعية؟", correctAnswer: true),
         Question(text: "احلامك مبنية على احداث واقعية؟", correctAnswer: false),
         Question(text: "تقضي وقت كثير بالبحث عن افكار غير واقعية خيالية ومثيرة للاهتمام بنفس الوقت؟", correctAnswer: false),
         Question(text: "تفكر كثير ليش الانسان موجود؟", correctAnswer: false),
@@ -74,22 +77,6 @@ struct QuizView: View {
         Question(text: "ما تلقى صعوبة في انك تحط جدول زمني وتلتزم فيه؟", correctAnswer: false),
         Question(text:"تميل للتأجيل الى اخر الوقت؟", correctAnswer: true),
     ])
-    //    @StateObject private var quiz5 = Quiz(questions: [
-    //        
-    //        Question(text: "سهل عليك الاسترخاء والتركيز حتى؟", correctAnswer: true),
-    //        Question(text: "تحس أنك أفضل من الاشخاص الآخرين؟", correctAnswer: false),
-    //        Question(text: " مزاجك يتغير بسرعه ؟", correctAnswer: false),
-    //        Question(text: "دايم تحس بالغيرة من الاشخاص الآخرين؟", correctAnswer: false),
-    //        Question(text: "لما ما يرد عليك شخص بالايميل، تحس بالقلق انك قلت شيء غلط؟", correctAnswer: false),
-    //        Question(text: "  نادر ما تحس بعدم الأمان؟", correctAnswer: true),
-    //        Question(text: "كثير ما تخلي اشيائك الخاصة في غير مكانها؟", correctAnswer: false),
-    //        Question(text: "تشوف نفسك مستقر جدا في الجانب العاطفي؟", correctAnswer: true),
-    //        Question(text: "تقلق كثير بتفكير االآخرين؟", correctAnswer: false),
-    //        
-    //        Question(text: "تحس انك قلق جدا بالمواقف الصعبه؟", correctAnswer: false),
-    //        Question(text: "غالبا تحس انك مضطر لتبرير افعالك للآخرين؟", correctAnswer: false),
-    //        //  Question(text:"نادر ما يقدرون يضايقونك الاشخاص؟", correctAnswer: true),
-    //    ])
     
     var body: some View {
         NavigationView {
@@ -105,16 +92,85 @@ struct QuizView: View {
                     }
                 }
                 if activeQuizIndex >= arrayOfQuizzes.count {
-                    Text("All quizzes are complete.")
-                    
                     // Calculate and display scores
                     let quizScores = calculateScores()
-                    ForEach(0..<quizScores.count, id: \.self) { index in
-                        Text("Quiz \(index + 1) Score: \(quizScores[index])")
+                   let  personalityType = calculatePersonalityType(quizScores: quizScores)
+                    
+                    if personalityType == "INTJ" || personalityType == "INTP" || personalityType == "ENTJ" || personalityType == "ENTP" && UserDefaults.standard.string(forKey: "userGender") == "male"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleAnalyst")) {
+                            Text("View your result")
+                                .font(.title)
+                            
+                        }
+                    }else if personalityType == "INTJ" || personalityType == "INTP" || personalityType == "ENTJ" || personalityType == "ENTP" && UserDefaults.standard.string(forKey: "userGender") == "female"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleAnalyst")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
+                    }else if personalityType == "INFJ" || personalityType == "INFP" || personalityType == "ENFJ" || personalityType == "ENFP" && UserDefaults.standard.string(forKey: "userGender") == "female"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleDiplomat")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
+                    }else if personalityType == "INFJ" || personalityType == "INFP" || personalityType == "ENFJ" || personalityType == "ENFP" && UserDefaults.standard.string(forKey: "userGender") == "male"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleDiplomat")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
+                    }else if personalityType == "ISTJ" || personalityType == "ISFJ" || personalityType == "ESTJ" || personalityType == "ESFJ" && UserDefaults.standard.string(forKey: "userGender") == "female"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleSentinel")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
+                    }else if personalityType == "ISTJ" || personalityType == "ISFJ" || personalityType == "ESTJ" || personalityType == "ESFJ" && UserDefaults.standard.string(forKey: "userGender") == "male"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleSentinel")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
+                    }else if personalityType == "ISTP" || personalityType == "ISFP" || personalityType == "ESTP" || personalityType == "ESFP"  && UserDefaults.standard.string(forKey: "userGender") == "female"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleExplorer")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
                     }
+                    else if personalityType == "ISTP" || personalityType == "ISFP" || personalityType == "ESTP" || personalityType == "ESFP"  && UserDefaults.standard.string(forKey: "userGender") == "male"{
+                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleExplorer")) {
+                            Text("View your result")
+                                .font(.title)
+                        }
+                    }
+                    
+//
+//
+//                    ForEach(0..<quizScores.count, id: \.self) { index in
+//                        Text("Quiz \(index + 1) Score: \(quizScores[index])")
+//
+//                    }
+                    Text("Personality type: \(personalityType)")
+                    
+                    
+                }
+                
+                //progress
+                var overallProgress: Double {
+                    let totalQuestions = arrayOfQuizzes.reduce(0) { $0 + $1.questions.count }
+                    let currentQuestionIndex = arrayOfQuizzes.reduce(0) { $0 + $1.currentQuestionIndex }
+                    return totalQuestions > 0 ? Double(currentQuestionIndex) / Double(totalQuestions) : 0
+                }
+                
+                if activeQuizIndex < arrayOfQuizzes.count && arrayOfQuizzes[activeQuizIndex].currentQuestionIndex < arrayOfQuizzes[activeQuizIndex].questions.count {
+                    let totalQuestions = arrayOfQuizzes.reduce(0) { $0 + $1.questions.count }
+                    let overallProgress = totalQuestions > 0 ? Double(overallQuestionIndex + 1) / Double(totalQuestions) : 0
+                    
+                    Text("\(overallQuestionIndex + 1)/\(totalQuestions)")
+                    
+                    ProgressView(value: overallProgress)
+                        .scaleEffect(CGSize(width: 0.8, height: 3.0))
+                        .progressViewStyle(LinearProgressViewStyle(tint: Color(uiColor: UIColor(red: 0.96, green: 0.64, blue: 0.38, alpha: 1.00))))
                 }
             }
             .navigationTitle("الأسئلة")
+
         }
     }
     
@@ -135,7 +191,58 @@ struct QuizView: View {
             
             activeQuizIndex += 1  // Move to the next quiz
         }
+        
+        
     }
+    func calculatePersonalityType(quizScores: [Int]) -> String {
+        let quiz1Score = quizScores[0]
+        let quiz2Score = quizScores[1]
+        let quiz3Score = quizScores[2]
+        let quiz4Score = quizScores[3]
+
+        print(quiz1Score)
+        print(quiz2Score)
+        print(quiz3Score)
+        print(quiz4Score)
+
+
+        if quiz1Score >= 6 && quiz2Score >= 6 && quiz3Score >= 7 && quiz4Score >= 6 {
+            return "ISFP"
+        } else if quiz1Score >= 6 && quiz2Score <= 5 && quiz3Score >= 7 && quiz4Score >= 6 {
+            return "INFP"
+        } else if quiz1Score >= 6 && quiz2Score >= 5 && quiz3Score <= 7 && quiz4Score >= 6 {
+            return "ISTP"
+        } else if quiz1Score >= 6 && quiz2Score >= 5 && quiz3Score >= 7 && quiz4Score <= 6 {
+            return "ISFJ"
+        } else if quiz1Score <= 6 && quiz2Score <= 5 && quiz3Score <= 7 && quiz4Score <= 6 {
+            return "ENTJ"
+        } else if quiz1Score <= 6 && quiz2Score <= 5 && quiz3Score >= 7 && quiz4Score >= 6 {
+            return "ENFP"
+        } else if quiz1Score <= 6 && quiz2Score <= 5 && quiz3Score >= 7 && quiz4Score <= 6 {
+            return "ENFJ"
+        } else if quiz1Score >= 6 && quiz2Score <= 5 && quiz3Score <= 7 && quiz4Score >= 6 {
+            return "INTP"
+        } else if quiz1Score <= 6 && quiz2Score >= 5 && quiz3Score <= 7 && quiz4Score >= 6 {
+            return "ESTP"
+        } else if quiz1Score <= 6 && quiz2Score >= 5 && quiz3Score <= 7 && quiz4Score <= 6 {
+            return "ESTJ"
+        } else if quiz1Score >= 6 && quiz2Score >= 5 && quiz3Score <= 7 && quiz4Score <= 6 {
+            return "ISTJ"
+        } else if quiz1Score <= 6 && quiz2Score >= 5 && quiz3Score >= 7 && quiz4Score <= 6 {
+            return "ESFJ"
+        } else if quiz1Score >= 6 && quiz2Score <= 5 && quiz3Score >= 7 && quiz4Score <= 6 {
+            return "INFJ"
+        } else if quiz1Score <= 6 && quiz2Score >= 5 && quiz3Score >= 7 && quiz4Score <= 6 {
+            return "ESFJ"
+        } else if quiz1Score >= 6 && quiz2Score <= 5 && quiz3Score >= 7 && quiz4Score <= 6 {
+            return "INFJ"
+        } else if quiz1Score >= 6 && quiz2Score <= 5 && quiz3Score <= 7 && quiz4Score <= 6 {
+                return "INTJ"
+            } else {
+                return "Personality Type not determined"
+            }
+        }
+    
     
     func calculateQuizScore(quiz: Quiz) -> Int {
         var score = 0
@@ -182,6 +289,12 @@ struct QuizView: View {
         }
     }
     
+    var overallQuestionIndex: Int {
+            let currentIndex = activeQuizIndex < arrayOfQuizzes.count ? arrayOfQuizzes[activeQuizIndex].currentQuestionIndex : 0
+            let previousQuizzesQuestions = activeQuizIndex < arrayOfQuizzes.count ? arrayOfQuizzes[0..<activeQuizIndex].reduce(0) { $0 + $1.questions.count } : 0
+            return previousQuizzesQuestions + currentIndex
+        }
+    
     
 }
     
@@ -227,18 +340,12 @@ struct QuizResult: Codable {
                             .cornerRadius(8)
                         
                     }
+                   
                 }
                 
                 
                 Spacer()
-                Text("\(quiz.currentQuestionIndex + 1) / \(quiz.questions.count)")
-                
-                ProgressView(value:Double(quiz.currentQuestionIndex)/Double(quiz.questions.count))
-                    .scaleEffect(CGSize(width: 0.8, height: 3.0))
-                    .progressViewStyle(LinearProgressViewStyle(tint: Color(uiColor: UIColor(red: 0.96, green: 0.64, blue: 0.38, alpha: 1.00))))
-                
-                
-                
+
                 
                 
             }
@@ -248,6 +355,11 @@ struct QuizResult: Codable {
 
     
     
+    #Preview {
+        QuizView()
+    }
+
+
     
     #Preview {
         QuizView()
