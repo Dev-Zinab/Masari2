@@ -361,7 +361,12 @@ struct QuizResult: Codable {
 
 
     
-    #Preview {
+//    #Preview {
+//        QuizView
+//    }
+struct Quiz_Previews: PreviewProvider {
+    static var previews: some View {
         QuizView()
     }
+}
 
