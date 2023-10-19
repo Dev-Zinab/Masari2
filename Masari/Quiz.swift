@@ -79,7 +79,6 @@ struct QuizView: View {
     ])
     
     var body: some View {
-        NavigationView {
             VStack {
                 if activeQuizIndex < arrayOfQuizzes.count {
                     if arrayOfQuizzes[activeQuizIndex].currentQuestionIndex < arrayOfQuizzes[activeQuizIndex].questions.count {
@@ -96,49 +95,55 @@ struct QuizView: View {
                     let quizScores = calculateScores()
                    let  personalityType = calculatePersonalityType(quizScores: quizScores)
                     
-                    if personalityType == "INTJ" || personalityType == "INTP" || personalityType == "ENTJ" || personalityType == "ENTP" && UserDefaults.standard.string(forKey: "userGender") == "male"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleAnalyst")) {
-                            Text("View your result")
-                                .font(.title)
-                            
-                        }
-                    }else if personalityType == "INTJ" || personalityType == "INTP" || personalityType == "ENTJ" || personalityType == "ENTP" && UserDefaults.standard.string(forKey: "userGender") == "female"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleAnalyst")) {
-                            Text("View your result")
-                                .font(.title)
-                        }
-                    }else if personalityType == "INFJ" || personalityType == "INFP" || personalityType == "ENFJ" || personalityType == "ENFP" && UserDefaults.standard.string(forKey: "userGender") == "female"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleDiplomat")) {
-                            Text("View your result")
-                                .font(.title)
-                        }
-                    }else if personalityType == "INFJ" || personalityType == "INFP" || personalityType == "ENFJ" || personalityType == "ENFP" && UserDefaults.standard.string(forKey: "userGender") == "male"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleDiplomat")) {
-                            Text("View your result")
-                                .font(.title)
-                        }
-                    }else if personalityType == "ISTJ" || personalityType == "ISFJ" || personalityType == "ESTJ" || personalityType == "ESFJ" && UserDefaults.standard.string(forKey: "userGender") == "female"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleSentinel")) {
-                            Text("View your result")
-                                .font(.title)
-                        }
-                    }else if personalityType == "ISTJ" || personalityType == "ISFJ" || personalityType == "ESTJ" || personalityType == "ESFJ" && UserDefaults.standard.string(forKey: "userGender") == "male"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleSentinel")) {
-                            Text("View your result")
-                                .font(.title)
-                        }
-                    }else if personalityType == "ISTP" || personalityType == "ISFP" || personalityType == "ESTP" || personalityType == "ESFP"  && UserDefaults.standard.string(forKey: "userGender") == "female"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleExplorer")) {
-                            Text("View your result")
-                                .font(.title)
+                    if personalityType == "INTJ" || personalityType == "INTP" || personalityType == "ENTJ" || personalityType == "ENTP"{
+                        if UserDefaults.standard.string(forKey: "userGender") == "male"{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleAnalyst")) {
+                                Text("View your result")
+                                    .font(.title)
+                            }
+                        }else{
+                                NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleAnalyst")) {
+                                    Text("View your result")
+                                        .font(.title)
+                                }
+                            }
+                    }else if personalityType == "INFJ" || personalityType == "INFP" || personalityType == "ENFJ" || personalityType == "ENFP"{
+                        if UserDefaults.standard.string(forKey: "userGender") == "female"{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleDiplomat")) {
+                                Text("View your result")
+                                    .font(.title)
+                            }
+                        }else{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleDiplomat")) {
+                                Text("View your result")
+                                    .font(.title)
                         }
                     }
-                    else if personalityType == "ISTP" || personalityType == "ISFP" || personalityType == "ESTP" || personalityType == "ESFP"  && UserDefaults.standard.string(forKey: "userGender") == "male"{
-                        NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleExplorer")) {
-                            Text("View your result")
-                                .font(.title)
+                    }else if personalityType == "ISTJ" || personalityType == "ISFJ" || personalityType == "ESTJ" || personalityType == "ESFJ"{
+                        if UserDefaults.standard.string(forKey: "userGender") == "female"{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleSentinel")) {
+                                Text("View your result")
+                                    .font(.title)
+                            }
+                        }else{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleSentinel")) {
+                                Text("View your result")
+                                    .font(.title)
+                            }
+                        }
+                    }else if personalityType == "ISTP" || personalityType == "ISFP" || personalityType == "ESTP" || personalityType == "ESFP"{
+                        if UserDefaults.standard.string(forKey: "userGender") == "female"{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleExplorer")) {
+                                Text("View your result")
+                                    .font(.title)
+                            }
+                        }else{
+                            NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleExplorer")) {
+                                Text("View your result")
+                                    .font(.title)
                         }
                     }
+                }
                     
 //
 //
@@ -170,8 +175,6 @@ struct QuizView: View {
                 }
             }
             .navigationTitle("الأسئلة")
-
-        }
     }
     
     func submitAnswer(isAgree: Bool) {
