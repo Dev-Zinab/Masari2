@@ -38,33 +38,33 @@ class Quiz: ObservableObject {
    
     
    
-
-    func result() -> Int
-    
-    {
-        if (score > 6)
-        {
-            print ("A")
-        }
-        if (score < 6) {
-            print ("b")
-        }
-        return result()
-        }
-    
-    func result13() -> Int
-    
-    {
-        if (score > 7)
-        {
-            print ("A")
-        }
-        if (score < 7) {
-            print ("b")
-        }
-        return result()
-        }
-    
+//
+//    func result() -> Int
+//    
+//    {
+//        if (score > 6)
+//        {
+//            print ("A")
+//        }
+//        if (score < 6) {
+//            print ("b")
+//        }
+//        return result()
+//        }
+//    
+//    func result13() -> Int
+//    
+//    {
+//        if (score > 7)
+//        {
+//            print ("A")
+//        }
+//        if (score < 7) {
+//            print ("b")
+//        }
+//        return result()
+//        }
+//    
     var currentQuestionNumber: Int {
             // Calculate the current question number based on the current index
             return currentQuestionIndex + 1

@@ -98,49 +98,64 @@ struct QuizView: View {
                     if personalityType == "INTJ" || personalityType == "INTP" || personalityType == "ENTJ" || personalityType == "ENTP"{
                         if UserDefaults.standard.string(forKey: "userGender") == "male"{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleAnalyst")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                
+
                             }
                         }else{
                                 NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleAnalyst")) {
-                                    Text("View your result")
+                                    Text("خلصنـا!")
                                         .font(.title)
+                                        .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
+
                                 }
                             }
                     }else if personalityType == "INFJ" || personalityType == "INFP" || personalityType == "ENFJ" || personalityType == "ENFP"{
                         if UserDefaults.standard.string(forKey: "userGender") == "female"{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleDiplomat")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                
+
                             }
                         }else{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleDiplomat")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                
+
                         }
                     }
                     }else if personalityType == "ISTJ" || personalityType == "ISFJ" || personalityType == "ESTJ" || personalityType == "ESFJ"{
                         if UserDefaults.standard.string(forKey: "userGender") == "female"{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleSentinel")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                
+
                             }
                         }else{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleSentinel")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                
+
                             }
                         }
                     }else if personalityType == "ISTP" || personalityType == "ISFP" || personalityType == "ESTP" || personalityType == "ESFP"{
                         if UserDefaults.standard.string(forKey: "userGender") == "female"{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "FemaleExplorer")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                
+
                             }
                         }else{
                             NavigationLink(destination: PersonalityResults(PersonalityResult: "MaleExplorer")) {
-                                Text("View your result")
+                                Text("خلصنـا!")
                                     .font(.title)
+                                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
                         }
                     }
                 }
@@ -151,8 +166,8 @@ struct QuizView: View {
 //                        Text("Quiz \(index + 1) Score: \(quizScores[index])")
 //
 //                    }
-                    Text("Personality type: \(personalityType)")
-                    
+//                    Text("Personality type: \(personalityType)")
+//                    
                     
                 }
                 
@@ -307,54 +322,70 @@ struct QuizResult: Codable {
 }
 
 
-   struct QuestionView: View {
-       let submitAnswer: (Bool) -> Void
-       let question : Question
-       @ObservedObject var quiz: Quiz // Make sure to pass the quiz instance
-       
+struct QuestionView: View {
+    let submitAnswer: (Bool) -> Void
+    let question : Question
+    @ObservedObject var quiz: Quiz // Make sure to pass the quiz instance
+    
+    
+    var body: some View {
         
-        var body: some View {
-            
-            VStack {
-                Spacer()
+        VStack (spacing: -150) {
+            ZStack {
+                Color.white // يمكنك تغيير اللون حسب رغبتك
+                    .ignoresSafeArea()
                 
-                Text(quiz.currentQuestion.text)
-                    .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
-                    .font(.headline)
-                    .padding()
-                HStack(spacing: 20) {
-                    Button(action: {
-                        submitAnswer(true) // Agree
-                    }) {
-                        Text("اوافــق")
-                            .padding()
-                            .background(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                    
-                    Button(action: {
-                        submitAnswer(false) // Disagree
-                    }) {
-                        Text("لا اوافق")
-                            .padding()
-                            .background(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                Rectangle()
+                    .frame(width: 300, height: 150)
+                    .foregroundColor(Color(uiColor: UIColor(red: 0.96, green: 0.64, blue: 0.38, alpha: 1.00))) // يمكنك تغيير اللون حسب رغبتك
+                    .opacity(0.4)
+                    .cornerRadius(25)
+                    .overlay(
+                        Text(quiz.currentQuestion.text).multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
+                            .font(.headline)
+                        // تمديد النص ليملأ المستطيل
                         
-                    }
-                   
-                }
-                
-                
-                Spacer()
-
-                
-                
+                        
+                    )
             }
             
+            
+            
+            HStack(spacing: 20)
+            {
+                Button(action: {
+                    submitAnswer(true) // Agree
+                }) {
+                    Text("اوافــق")
+                        .padding()
+                        .background(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                Button(action: {
+                    submitAnswer(false) // Disagree
+                }) {
+                    Text("لا اوافق")
+                        .padding()
+                        .background(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                    
+                }
+            }
+            .padding(100)
+            
+            
+            
+            
+            
+            
         }
+        
     }
+}
 
     
     

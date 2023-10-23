@@ -25,25 +25,21 @@ struct Onboarding: View {
                         
                     }
                 }
-                .padding()
-                Spacer(minLength: 0)
                 
+
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding (.horizontal,16)
-                    .frame(height:300)
+                    .frame(height:200)
                 
-                Spacer(minLength: 80)
-                
-                Text("تطبيق مساري يساعدك في معرفة تخصصك الجامعي لتحديد مسارك المهني مستقبلًا")
-                    .font(.largeTitle)
+
+                Text ("تطبيق مساري\n\n يساعدك في معرفة تخصصك الجامعي  \n لتحديد مسارك المهني مستقبلًا."
+)
+                .foregroundColor(Color(UIColor(red: 0.13, green: 0.18, blue: 0.33, alpha: 1.00)))                .font(.headline)
                     .fontWeight(.bold)
                     .kerning(1.2)
                     .multilineTextAlignment(.center)
-                    .padding(.top)
-                    .padding(.bottom)
-                    .foregroundColor(Color("AccentColor"))
             }
             
         }
