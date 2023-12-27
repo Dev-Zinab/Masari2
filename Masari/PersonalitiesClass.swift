@@ -292,6 +292,7 @@ class PersonalitiesClass{
                             )
                     }}
             )
+            
         default:
             return AnyView(
                 VStack {
